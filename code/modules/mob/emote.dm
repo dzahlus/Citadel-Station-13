@@ -36,7 +36,7 @@
 /datum/emote/spin/run_emote(mob/user)
 	. = ..()
 	if(.)
-		user.spin(20, 1)
+		user.spin(20 / world.tick_lag, world.tick_lag)
 
 		if(iscyborg(user) && user.has_buckled_mobs())
 			var/mob/living/silicon/robot/R = user
